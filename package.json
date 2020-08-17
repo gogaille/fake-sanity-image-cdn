@@ -1,0 +1,14 @@
+{
+  "name": "fake-sanity-image-cdn",
+  "version": "0.0.1",
+  "description": "An endpoint that emulate sanity image CDN behavior but return placeholder image instead",
+  "main": "index.js",
+  "author": "Armand Abric <armand@forgebinaire.net>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {},
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "vercel": "^19.2.0"
+  }
+}
