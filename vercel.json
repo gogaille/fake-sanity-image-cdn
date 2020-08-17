@@ -1,3 +1,10 @@
 {
-  "rewrites": [{ "source": "/bar(/.*)", "destination": "/api/proxy?path=$1" }]
+  "redirects": [
+    {
+      "source": "/",
+      "statusCode": 301,
+      "destination": "https://github.com/gogaille/fake-sanity-image-cdn"
+    }
+  ],
+  "rewrites": [{ "source": "/proxy(/.*)", "destination": "/api/proxy?path=$1" }]
 }
