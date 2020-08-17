@@ -13,14 +13,13 @@ imageUrlBuilder instanse:
 ```js
 import imageUrlBuilder from '@sanity/image-url';
 
-const myConfiguredSanityClient = {
-/_ ... _/,
-baseUrl: "https://fake-sanity-image-cdn.vercel.app/proxy/"
-};
+const myConfiguredSanityClient = { /* ... */ };
 
-const builder = imageUrlBuilder(myConfiguredSanityClient);
+const builder = imageUrlBuilder(myConfiguredSanityClient).withOptions({ 
+  baseUrl: "https://fake-sanity-image-cdn.vercel.app/proxy/" 
+});
 
-console.log(builder.image("...").url())</code></pre>
+console.log(builder.image("...").url())
 ```
 
 ## Limitations
