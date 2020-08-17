@@ -1,6 +1,5 @@
 const EXTRACT_INFO_FROM_PATH_REGEX = /([a-zA-Z0-9]+)-([0-9]+)x([0-9]+)\.([a-z]+)$/i;
 
-// TODO: Rename endpoint to `/api/sanity-endpoint`
 // TODO: Extract width and height from the query to overload the one in the path
 // TODO: Extract the format from the query to validate it (picsum.photos only support jpg)
 export default (req, res) => {
