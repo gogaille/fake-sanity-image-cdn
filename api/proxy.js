@@ -30,6 +30,6 @@ export default (req, res) => {
     destination,
   });
 
-  res.writeHead(301, { Location: destination });
+  res.writeHead(302, { Location: destination });
   res.end();
 };
