@@ -1,6 +1,5 @@
 const EXTRACT_INFO_FROM_PATH_REGEX = /([a-zA-Z0-9]+)-([0-9]+)x([0-9]+)\.([a-z]+)$/i;
 
-// TODO: Extract width and height from the query to overload the one in the path
 // TODO: Extract the format from the query to validate it (picsum.photos only support jpg)
 export default (req, res) => {
   console.log({
@@ -10,7 +9,11 @@ export default (req, res) => {
   });
 
   const {
-    query: { path: originalPath = "/" },
+    query: {
+      path: originalPath = "/",
+      w: requestedWidth = undefined,
+      h: requestedHeight = undefined,
+    },
   } = req;
 
   const infos = EXTRACT_INFO_FROM_PATH_REGEX.exec(originalPath);
@@ -24,7 +27,9 @@ export default (req, res) => {
     return res.status(503).end("Only image could be faked");
   }
 
-  const destination = `https://picsum.photos/id/${photoId}/${width}/${height}.${format}`;
+  const destination = `https://picsum.photos/id/${photoId}/${
+    requestedWidth || width
+  }/${requestedHeight || height}.${format}`;
 
   console.log({
     destination,
