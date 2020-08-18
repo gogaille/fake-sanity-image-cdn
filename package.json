@@ -10,5 +10,8 @@
   "devDependencies": {
     "prettier": "^2.0.5",
     "vercel": "^19.2.0"
+  },
+  "dependencies": {
+    "cloudinary": "^1.22.0"
   }
 }
